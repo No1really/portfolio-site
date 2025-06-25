@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Koustabh Bhaduri - Digital Marketing Professional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* CSS Variables and Base Styles */
+    :root {
+      /* Light Theme */
+      --light-start: #ffffff;
+      --light-end: #f8f9fc;
+      --light-accent: #6366f1;
+      --light-accent-hover: #4f46e5;
+      --light-text: #1e293b;
+      --light-text-secondary: #64748b;
+      --light-border: rgba(255, 255, 255, 0.2);
+      --light-glass: rgba(255, 255, 255, 0.15);
+      --light-glass-hover: rgba(255, 255, 255, 0.25);
+      
+      /* Dark Theme */
+      --dark-start: #0f172a;
+      --dark-end: #1e293b;
+      --dark-accent: #8b5cf6;
+      --dark-accent-hover: #7c3aed;
+      --dark-text: #f1f5f9;
+      --dark-text-secondary: #94a3b8;
+      --dark-border: rgba(255, 255, 255, 0.1);
+      --dark-glass: rgba(15, 23, 42, 0.15);
+      --dark-glass-hover: rgba(15, 23, 42, 0.25);
+      
+      /* Common */
+      --radius: 20px;
+      --radius-small: 12px;
+      --blur-bg: 20px;
+      --blur-card: 15px;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.15);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-display: 'Playfair Display', serif;
+    }
+
+    /* Theme Variables */
+    html[data-theme="light"] {
+      --bg-start: var(--light-start);
+      --bg-end: var(--light-end);
+      --accent: var(--light-accent);
+      --accent-hover: var(--light-accent-hover);
+      --text-color: var(--light-text);
+      --text-secondary: var(--light-text-secondary);
+      --border-color: var(--light-border);
+      --glass-bg: var(--light-glass);
+      --glass-hover: var(--light-glass-hover);
+    }
+
+    html[data-theme="dark"] {
+      --bg-start: var(--dark-start);
+      --bg-end: var(--dark-end);
+      --accent: var(--dark-accent);
+      --accent-hover: var(--dark-accent-hover);
+      --text-color: var(--dark-text);
+      --text-secondary: var(--dark-text-secondary);
+      --border-color: var(--dark-border);
+      --glass-bg: var(--dark-glass);
+      --glass-hover: var(--dark-glass-hover);
+    }
+
+    /* Reset and Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+      font-family: var(--font-primary);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--text-color);
+      background: none;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Animated Background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      z-index: -3;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Theme Toggle */
+    #theme-toggle {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--blur-card));
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-color);
+      font-size: 1.2rem;
+      transition: var(--transition);
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+
+    #theme-toggle:hover {
+      background: var(--glass-hover);
+      transform: scale(1.1);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Main Layout */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      gap: 2rem;
+      box-sizing: border-box;
+    }
+
+    /* Island Base Styles */
+    .island {
+      width: 90vw;
+      max-width: 600px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--blur-card));
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .island:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+    }
+
+    /* Header Island */
+    .header-island h1 {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 600;
+      margin: 1rem 0 0.5rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-island h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .header-island p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 90%;
+      margin: 0 auto 1.5rem;
+    }
+
+    .profile-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .profile-image {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    .profile-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-status {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      background: #10b981;
+      border: 3px solid var(--bg-start);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .location {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .location i {
+      color: var(--accent);
+    }
+
+    /* Skills Island */
+    .skills-island h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .skills-island h3 i {
+      color: var(--accent);
+    }
+
+    .skills-track {
+      display: flex;
+      gap: 1rem;
+      animation: scrollSkills 30s linear infinite;
+      width: fit-content;
+    }
+
+    @keyframes scrollSkills {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .skill-tag {
+      flex: none;
+      padding: 0.7rem 1.2rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-small);
+      white-space: nowrap;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .skill-tag:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* CTA Island */
+    .cta-island {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 1.5rem;
+    }
+
+    .cta-button {
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--blur-card));
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-small);
+      padding: 1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      color: var(--text-color);
+      font-size: 1.1rem;
+      transition: var(--transition);
+      text-decoration: none;
+      min-width: 100px;
+    }
+
+    .cta-button:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+    }
+
+    .cta-button i {
+      font-size: 1.3rem;
+    }
+
+    .cta-button span {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 1rem 0.5rem;
+        gap: 1.5rem;
+      }
+      
+      .island {
+        width: 95vw;
+        padding: 1.5rem;
+      }
+      
+      .header-island h1 {
+        font-size: 2.2rem;
+      }
+      
+      .header-island h2 {
+        font-size: 1.2rem;
+      }
+      
+      .profile-image {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .cta-island {
+        gap: 0.8rem;
+      }
+      
+      .cta-button {
+        min-width: 80px;
+        padding: 0.8rem 1rem;
+      }
+      
+      #theme-toggle {
+        top: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" aria-label="Toggle theme">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Main Content -->
+  <div class="hero">
+    <!-- Header Island -->
+    <div class="island header-island">
+      <div class="profile-container">
+        <img src="profile.png" alt="Koustabh Bhaduri" class="profile-image">
+        <div class="profile-status"></div>
+      </div>
+      <h1>Koustabh Bhaduri</h1>
+      <h2>Digital Marketing Professional</h2>
+      <p>Results-driven Digital Marketer skilled in campaign management, analytics, and e-commerce solutions, with hands-on experience leveraging AI tools to optimize marketing strategies and customer engagement.</p>
+      <div class="location">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Kolkata, India</span>
+      </div>
+    </div>
+
+    <!-- Skills Island -->
+    <div class="island skills-island">
+      <h3><i class="fas fa-code"></i> Core Skills</h3>
+      <div class="skills-track">
+        <div class="skill-tag">Google Ads</div>
+        <div class="skill-tag">Analytics</div>
+        <div class="skill-tag">Campaign Management</div>
+        <div class="skill-tag">Content Creation</div>
+        <div class="skill-tag">E-commerce Solutions</div>
+        <div class="skill-tag">Email Marketing</div>
+        <div class="skill-tag">CRM</div>
+        <div class="skill-tag">Market Research</div>
+        <div class="skill-tag">Google Ads</div>
+        <div class="skill-tag">Analytics</div>
+        <div class="skill-tag">Campaign Management</div>
+        <div class="skill-tag">Content Creation</div>
+      </div>
+    </div>
+
+    <!-- Experience Island -->
+    <div class="island experience-island">
+      <h3><i class="fas fa-briefcase"></i> Current Role</h3>
+      <div style="display: flex; align-items: flex-start; gap: 1.5rem; text-align: left; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--border-color); border-radius: var(--radius-small);">
+        <div style="width: 50px; height: 50px; background: var(--accent); border-radius: var(--radius-small); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">
+          <i class="fas fa-building"></i>
+        </div>
+        <div>
+          <h4 style="font-size: 1.2rem; font-weight: 600; color: var(--text-color); margin-bottom: 0.3rem;">NDR Manager & Customer Experience</h4>
+          <p style="font-weight: 500; color: var(--accent); margin-bottom: 0.2rem;">Nikki.K Premium Clothing</p>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">Aug 2023 – Present</p>
+          <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.95rem;">
+              <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
+              Reduced delivery issues by 25% through customer insights and analytics
+            </li>
+            <li style="position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.95rem;">
+              <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
+              Increased NPS by 20% through targeted outreach and satisfaction initiatives
+            </li>
+            <li style="position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.95rem;">
+              <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">▸</span>
+              Directed multi-channel communication strategies for brand reputation
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education Island -->
+    <div class="island education-island">
+      <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+      <div style="display: flex; align-items: flex-start; gap: 1.5rem; text-align: left; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--border-color); border-radius: var(--radius-small);">
+        <div style="width: 50px; height: 50px; background: var(--accent); border-radius: var(--radius-small); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">
+          <i class="fas fa-university"></i>
+        </div>
+        <div>
+          <h4 style="font-size: 1.2rem; font-weight: 600; color: var(--text-color); margin-bottom: 0.3rem;">Bachelor of Business Administration</h4>
+          <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 0.2rem;">Advertising and Branding</p>
+          <p style="font-weight: 500; color: var(--accent); margin-bottom: 0.2rem;">Jain Deemed to be University</p>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">August 2022 - Present</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Island -->
+    <div class="island cta-island">
+      <button class="cta-button" title="About Me">
+        <i class="fas fa-user"></i>
+        <span>About</span>
+      </button>
+      <button class="cta-button" title="Projects">
+        <i class="fas fa-project-diagram"></i>
+        <span>Projects</span>
+      </button>
+      <button class="cta-button" title="Contact">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </button>
+      <button class="cta-button" title="Resume">
+        <i class="fas fa-download"></i>
+        <span>Resume</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Theme Management
+    document.addEventListener('DOMContentLoaded', function() {
+      const root = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      
+      // Get saved theme or use system preference
+      const savedTheme = localStorage.getItem('theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initialTheme = savedTheme || (systemDark ? 'dark' : 'light');
+      
+      function setTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        updateToggleIcon(theme);
+      }
+      
+      function updateToggleIcon(theme) {
+        const icon = toggle.querySelector('i');
+        if (theme === 'dark') {
+          icon.className = 'fas fa-sun';
+        } else {
+          icon.className = 'fas fa-moon';
+        }
+      }
+      
+      setTheme(initialTheme);
+      
+      toggle.addEventListener('click', () => {
+        const currentTheme = root.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Add a subtle animation to the toggle button
+        toggle.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+          toggle.style.transform = 'scale(1)';
+        }, 150);
+      });
+    });
+  </script>
+</body>
+</html>
+

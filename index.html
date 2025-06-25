@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koustabh Bhaduri - Digital Marketing Professional</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Floating Orbs -->
+  <div class="floating-orb orb-1"></div>
+  <div class="floating-orb orb-2"></div>
+  <div class="floating-orb orb-3"></div>
+  <div class="floating-orb orb-4"></div>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <div class="container">
+    <!-- Hero Island -->
+    <div class="island hero-island">
+      <div class="profile-container">
+        <img src="profile.png" alt="Koustabh Bhaduri" class="profile-picture">
+        <div class="status-indicator"></div>
+      </div>
+      <h1 class="hero-name">Koustabh Bhaduri</h1>
+      <p class="hero-title">Digital Marketer • Music Producer</p>
+      <p class="hero-bio">I'm a digital marketer and music producer driven by the psychology of what moves people—whether through brand campaigns or beats.</p>
+    </div>
+
+    <!-- Skills Island -->
+    <div class="island skills-island">
+      <div class="skills-carousel">
+        <div class="skill-pill">Google Ads</div>
+        <div class="skill-pill">Meta Ads</div>
+        <div class="skill-pill">SEO</div>
+        <div class="skill-pill">Analytics</div>
+        <div class="skill-pill">FL Studio</div>
+        <div class="skill-pill">Social Media</div>
+        <div class="skill-pill">Google Ads</div>
+        <div class="skill-pill">Meta Ads</div>
+        <div class="skill-pill">SEO</div>
+        <div class="skill-pill">Analytics</div>
+        <div class="skill-pill">FL Studio</div>
+        <div class="skill-pill">Social Media</div>
+      </div>
+    </div>
+
+    <!-- CTA Island -->
+    <div class="island cta-island">
+      <button class="cta-button" onclick="openModal('aboutModal')">
+        <i class="fas fa-info-circle"></i>
+        <span>About</span>
+      </button>
+      <button class="cta-button" onclick="openModal('workModal')">
+        <i class="fas fa-briefcase"></i>
+        <span>Work</span>
+      </button>
+      <button class="cta-button" onclick="openModal('portfolioModal')">
+        <i class="fas fa-folder"></i>
+        <span>Portfolio</span>
+      </button>
+      <button class="cta-button" onclick="openModal('contactModal')">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- About Modal -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-user"></i> About Me</h3>
+        <button class="modal-close" onclick="closeModal('aboutModal')"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <!-- About Me Dropdown -->
+        <div class="dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">
+            <h4><i class="fas fa-user-circle"></i> About Me</h4>
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </div>
+          <div class="dropdown-content">
+            <p>I was born to a Bengali Army Officer's family in Rajasthan on 26th of November, 2004. Was brought up in Kolkata, did my schooling from here. While i was figuring out my interests and preferences during the final few years of school, my passion about learning how brands advertise and how easily people are attracted towards them grew. Besides this, I always had a passion about Music Production, ever since I was in my 8th standard.</p>
+            
+            <p>Taking my interests about creativity, marketing and startup culture in, I decided to delve deeper and get a degree. That is when I came across this course from Jain Deemed to be University, Bangalore where i was given the opportunity to understand how branding worked, how marketing was done creatively, how to run and emphasize the ads and branding elements by incorporating the ideas such as Color Psychology, Brand personification and identity creation alongside the traditional B-School knowledge about Supply Chain Management, Product Management, Operations Management, Research and Analytics, etc. all while being at home on a laptop. This in turn, gave me enough room to experiment with different AI Tools such as ChatGPT, Perplexity, Claude, Zapier, Lovable AI, Gemini, Grok among others.</p>
+            
+            <p>And now, i am looking forward to bringing all my knowledge to practice in the real world and help myself as well as B2C Startups grow in the field.</p>
+          </div>
+        </div>
+
+        <!-- Education Dropdown -->
+        <div class="dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">
+            <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </div>
+          <div class="dropdown-content">
+            <div class="education-item">
+              <h5>Army Public School, Kolkata</h5>
+              <p><strong>Passout:</strong> 2022, Humanities/Arts</p>
+              <p><strong>Class 10th:</strong> 73.6% <a href="https://drive.google.com/file/d/1-ouVJCJ5YfWBG5XGibzZS7NtEfOab_F8/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="education-link">View Certificate</a></p>
+              <p><strong>Class 12th:</strong> 83.6% <a href="https://drive.google.com/file/d/1-skPBVzh1_42XcBPhQozGe1My3cVeLwo/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="education-link">View Certificate</a></p>
+            </div>
+            
+            <div class="education-item">
+              <h5>Jain Deemed To Be University, Online</h5>
+              <p><strong>Degree:</strong> BBA in Advertising and Branding</p>
+              <p><strong>Duration:</strong> August 2022 - 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interests Dropdown -->
+        <div class="dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">
+            <h4><i class="fas fa-heart"></i> Interests</h4>
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </div>
+          <div class="dropdown-content">
+            <div class="interest-category">
+              <h4><i class="fas fa-chart-line"></i> Self Improvement</h4>
+              <p>Meditation, self care, financial education, Upskilling myself on topics such as AI and Marketing Trends, etc.</p>
+              <p class="channels-list">Channels I follow: Hamza, Ankur Warikoo, Nischa, Tim Dessaint, Senator We Run Ads, Ahrefs among others.</p>
+            </div>
+            
+            <div class="interest-category">
+              <h4><i class="fas fa-book"></i> Reading</h4>
+              <p>Favourite Books include Atomic Habits, Psychology of Money, Do Epic Shit</p>
+            </div>
+            
+            <div class="interest-category">
+              <h4><i class="fas fa-music"></i> Music Production</h4>
+              <div class="social-links">
+                <a href="https://soundcloud.com/no1_da" target="_blank" rel="noopener noreferrer" class="social-button">
+                  <i class="fab fa-soundcloud"></i> SoundCloud
+                </a>
+                <a href="https://www.bandlab.com/no1_da" target="_blank" rel="noopener noreferrer" class="social-button">
+                  <i class="fas fa-music"></i> BandLab
+                </a>
+              </div>
+            </div>
+            
+            <div class="interest-category">
+              <h4><i class="fas fa-palette"></i> Branding and Storytelling</h4>
+              <div class="social-links">
+                <a href="https://www.instagram.com/theaideator25/" target="_blank" rel="noopener noreferrer" class="social-button">
+                  <i class="fab fa-instagram"></i> @theaideator25
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Work Modal -->
+  <div id="workModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+        <button class="modal-close" onclick="closeModal('workModal')"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="work-experience">
+          <div class="job-card">
+            <div class="job-header">
+              <div class="company-info">
+                <h4>NDR Manager & Customer Experience</h4>
+                <h5><i class="fas fa-building"></i> Nikki.K Premium Clothing</h5>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+                <p class="duration"><i class="fas fa-calendar"></i> August 2023 – Present</p>
+                <a href="https://nikkikclothing.com" target="_blank" rel="noopener noreferrer" class="company-link">
+                  <i class="fas fa-external-link-alt"></i> Visit Company Website
+                </a>
+              </div>
+            </div>
+            
+            <div class="job-description">
+              <h6><i class="fas fa-star"></i> Key Achievements</h6>
+              <ul class="achievements">
+                <li><i class="fas fa-chart-line"></i> Leveraged customer insights and analytics to inform process improvements, resulting in a <strong>25% reduction in delivery issues</strong></li>
+                <li><i class="fas fa-heart"></i> Enhanced customer retention and repeat business through targeted outreach and satisfaction initiatives, increasing <strong>NPS by 20%</strong></li>
+                <li><i class="fas fa-comments"></i> Directed multi-channel communication strategies to resolve customer concerns and uphold brand reputation</li>
+              </ul>
+              
+              <h6><i class="fas fa-tools"></i> Skills Developed</h6>
+              <div class="skills-used">
+                <span class="skill-badge">Customer Analytics</span>
+                <span class="skill-badge">Process Optimization</span>
+                <span class="skill-badge">Multi-channel Communication</span>
+                <span class="skill-badge">Brand Management</span>
+                <span class="skill-badge">Customer Retention</span>
+                <span class="skill-badge">Data Analysis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal -->
+  <div id="portfolioModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-folder"></i> Portfolio</h3>
+        <button class="modal-close" onclick="closeModal('portfolioModal')"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="portfolio-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <h4><i class="fas fa-search"></i> Academic Research Project</h4>
+              <p class="project-type">Research & Analysis</p>
+            </div>
+            <div class="project-description">
+              <p><strong>Title:</strong> "Embracing Inclusivity and Diversity: The Impact on Consumer Perception"</p>
+              <p><strong>Methodology:</strong> Comprehensive analysis of consumer behavior patterns and brand perception studies focusing on inclusive marketing strategies.</p>
+              <p><strong>Key Findings:</strong> Demonstrated how inclusive branding significantly impacts consumer trust and brand loyalty, particularly among younger demographics.</p>
+              <p><strong>Recommendations:</strong> Developed actionable strategies for brands to implement inclusive marketing while maintaining authentic brand voice.</p>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-header">
+              <h4><i class="fas fa-music"></i> Music Production Portfolio</h4>
+              <p class="project-type">Creative & Audio</p>
+            </div>
+            <div class="project-description">
+              <p>Explore my music production journey where I blend creativity with technical expertise. From electronic beats to experimental soundscapes, my work demonstrates proficiency in FL Studio and understanding of audio engineering principles.</p>
+              <div class="project-links">
+                <a href="https://soundcloud.com/no1_da" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fab fa-soundcloud"></i> SoundCloud
+                </a>
+                <a href="https://www.bandlab.com/no1_da" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fas fa-music"></i> BandLab
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-envelope"></i> Get In Touch</h3>
+        <button class="modal-close" onclick="closeModal('contactModal')"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="contact-intro">
+          <p>Let's connect and explore opportunities to work together. I'm always excited to discuss digital marketing strategies, brand campaigns, or music production collaborations.</p>
+        </div>
+        
+        <div class="contact-grid">
+          <a href="https://wa.me/918981223591" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <div class="contact-icon whatsapp">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="contact-info">
+              <h4>WhatsApp</h4>
+              <p>Quick messages and calls</p>
+              <p class="contact-handle">+91 8981223591</p>
+            </div>
+          </a>
+          
+          <a href="https://t.me/koustabh_bhaduri" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <div class="contact-icon telegram">
+              <i class="fab fa-telegram-plane"></i>
+            </div>
+            <div class="contact-info">
+              <h4>Telegram</h4>
+              <p>Secure messaging</p>
+              <p class="contact-handle">@koustabh_bhaduri</p>
+            </div>
+          </a>
+          
+          <a href="mailto:k.bhad24@gmail.com" class="contact-item">
+            <div class="contact-icon email">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-info">
+              <h4>Email</h4>
+              <p>Professional inquiries</p>
+              <p class="contact-handle">k.bhad24@gmail.com</p>
+            </div>
+          </a>
+          
+          <a href="https://www.instagram.com/theaideator25/" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <div class="contact-icon instagram">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <div class="contact-info">
+              <h4>Instagram</h4>
+              <p>Creative content & updates</p>
+              <p class="contact-handle">@theaideator25</p>
+            </div>
+          </a>
+          
+          <a href="https://www.linkedin.com/in/koustabh-bhaduri" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <div class="contact-icon linkedin">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div class="contact-info">
+              <h4>LinkedIn</h4>
+              <p>Professional networking</p>
+              <p class="contact-handle">Koustabh Bhaduri</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
