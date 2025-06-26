@@ -20,7 +20,7 @@ A modern, minimalist personal website showcasing my professional profile as a Di
 
 ## Live Website
 
-Visit the live website at: [Your GitHub Pages URL will be here]
+Visit the live website at: https://no1really.github.io/portfolio-site/
 
 ## Contact
 
